@@ -1,5 +1,5 @@
 class Entity < ApplicationRecord
-    validates :name, :icon, presence: true
+    validates :name, :amount, presence: true
     belongs_to :user
-    belongs_to :group
+    has_many :entities
 end
