@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_24_225307) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_26_194052) do
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "amount"
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -24,6 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_225307) do
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "entity_id", null: false
+    t.index ["entity_id"], name: "index_groups_on_entity_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_225307) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "entities", "users"
+  add_foreign_key "groups", "entities"
+  add_foreign_key "groups", "users"
 end
