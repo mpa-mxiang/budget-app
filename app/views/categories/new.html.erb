@@ -1,2 +1,20 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+<!-- app/views/categories/new.html.erb -->
+<h1>Add a Category</h1>
+
+<%= form_with(model: @category, url: create_category_path, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :name, 'Category Name' %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_type, 'Category Type' %>
+    <%= form.select :category_type, ['Entity', 'User', 'Group'], required: true %>
+  </div>
+
+  <!-- Add other necessary fields here -->
+
+  <div class="actions">
+    <%= form.submit 'Create Category' %>
+  </div>
+<% end %>
