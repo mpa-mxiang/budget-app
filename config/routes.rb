@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :groups, only: [:new, :create]
+  resources :group, only: [:new, :create]
 end
