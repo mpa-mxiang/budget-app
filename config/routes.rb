@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'entity/index'
   get 'entity/new'
   get 'entity/create'
