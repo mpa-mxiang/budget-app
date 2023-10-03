@@ -3,7 +3,7 @@ class GroupController < ApplicationController
         @group = Group.new
     end
     def index
-        @group = Group.all
+        @groups = Group.all
       end
     def create
         @group = Group.new(category_params)

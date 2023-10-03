@@ -8,13 +8,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @categories.each do |category| %>
+    <% @groups.each do |g| %>
       <tr>
-        <td><%= category.name %></td>
-        <td><%= category.icon %></td>
+        <td><%= g.name %></td>
+        <td><%= g.icon %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'New Group', new_group_path %>
