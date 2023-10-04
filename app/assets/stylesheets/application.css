@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ #icon-selector .fas {
+  font-size: 30px;
+ }
+ #icon-selector .fas:hover {
+  transform: scale(1.3);
+  color: blue;
+ }
