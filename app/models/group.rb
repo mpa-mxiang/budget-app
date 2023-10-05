@@ -1,7 +1,6 @@
 class Group < ApplicationRecord
     validates :name, presence: true
     belongs_to :user
-    belongs_to :entity
     enum icon: {
         home: "fas fa-home",
         heart: "fas fa-heart",
