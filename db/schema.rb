@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "amount"
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
-    t.integer "entity_id", null: false
+    t.integer "entity_id"
     t.index ["entity_id"], name: "index_groups_on_entity_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end

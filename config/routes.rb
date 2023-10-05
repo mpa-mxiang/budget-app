@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :group, only: [:new, :create]
   devise_for :users
   get 'entity/index'
   get 'entity/new'
@@ -7,5 +8,4 @@ Rails.application.routes.draw do
   root 'group#index'
   resources :entity 
   get '/add_entity', to: 'entity#new', as: 'new_entity_page'
-  resources :group, only: [:new, :create]
 end
