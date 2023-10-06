@@ -1,0 +1,8 @@
+<h1>Group Details</h1>
+
+<div class="group-details">
+  <p><strong>Name:</strong> <%= @group.name %></p>
+  <p><strong>Icon:</strong> <i class="<%= "fas fa-#{@group.icon}" %>"></i></p>
+</div>
+
+<%= link_to 'Back', root_path, class: 'btn btn-secondary' %>

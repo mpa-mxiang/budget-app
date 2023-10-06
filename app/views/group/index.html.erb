@@ -3,25 +3,28 @@
 <table>
   <thead>
     <tr>
-      <%# <th>Icon</th>
+      <th>Icon</th>
       <th>Name</th>
-      <th>Amount</th> %>
+      <th>Amount</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @groups.each do |g| %>      
+    <% @groups.each do |g| %>
       <tr>
-      <link_to g.group_index_path>
-        <td>          
+        <td>
           <i class="<%= "fas fa-#{g.icon}" %>"></i>
         </td>
-        
         <td><%= g.name %></td>
         <td><%= g.amount %></td>
-      </link_to>
+        <td>
+          <%= link_to 'Show', group_path(g), class: 'btn btn-primary' %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 
@@ -30,3 +33,4 @@
 <br>
 
 <%= link_to 'New Group', new_group_path %>
+<%= link_to 'Back', home_path %>
