@@ -1,2 +1,25 @@
-<h1>Entity#index</h1>
-<p>Find me in app/views/entity/index.html.erb</p>
+<h1>Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @entities.each do |entity| %>
+      <tr>
+        <td><%= entity.name %></td>
+        <td><%= entity.amount %></td>
+        <td>
+          <%= link_to 'Show', entity_path(entity), class: 'btn btn-primary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaction', new_entity_path %>
