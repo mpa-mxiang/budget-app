@@ -19,18 +19,6 @@ class GroupController < ApplicationController
         @groups = Group.all
       end
     def create
-      @icon_options = [
-          "fas fa-home",
-          "fas fa-heart",
-          "fas fa-globe",
-          "fas fa-user",
-          "fas fa-envelope",
-          "fas fa-camera",
-          "fas fa-shopping-cart",
-          "fas fa-briefcase",
-          "fas fa-cog",
-          "fas fa-check-circle"
-        ]
         @group = Group.new(category_params)
     
         if @group.save

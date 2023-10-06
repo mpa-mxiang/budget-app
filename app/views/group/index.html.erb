@@ -3,16 +3,19 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
       <th>Icon</th>
+      <th>Name</th>
+      <th>Amount</th>
     </tr>
   </thead>
   <tbody>
     <% @groups.each do |g| %>
       <tr>
-        <td><%= g.name %></td>
+      <link_to g.group_index_path>
         <td><%= g.icon %></td>
-      </tr>
+        <td><%= g.name %></td>
+        <td><%= g.amount %></td>
+      </link_to>
     <% end %>
   </tbody>
 </table>
