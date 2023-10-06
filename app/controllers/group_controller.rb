@@ -3,16 +3,16 @@ class GroupController < ApplicationController
     def new
         @group = Group.new
         @icon_options = [
-          "fas fa-home",
-          "fas fa-heart",
-          "fas fa-globe",
-          "fas fa-user",
-          "fas fa-envelope",
-          "fas fa-camera",
-          "fas fa-shopping-cart",
-          "fas fa-briefcase",
-          "fas fa-cog",
-          "fas fa-check-circle"
+          "home",
+          "heart",
+          "globe",
+          "user",
+          "envelope",
+          "camera",
+          "shopping-cart",
+          "briefcase",
+          "cog",
+          "check-circle"
         ]
     end
     def index
