@@ -5,32 +5,19 @@
     <%= form.text_field :name %>
   </div>
 
-  <%# <div class="field">
-    <%# <%= form.label :icon %> %>
-    <%# <%= form.select :icon, Group.icons.keys.map { |key| [key.humanize, key] }, {}, class: 'form-control' %> %>
-  <%# </div> %> %>
-
   <div class="field">
-  <%= form.label :icon %>
-  <%# <%= form.select :icon, @icon_options, {}, class: 'form-control' %> %>
+  <%= form.label :icon %>  
 
   <select name="group[icon]" class="form-control">
     <% @icon_options.each do |option| %>
+      <%=option%>
+      <%= "============================" %>
       <option value="<%= option %>"><%= option %></option>
     <% end %>
-  </select>
-
-
-
-  <%= @icon_options.inspect %>
+  </select>  
 </div>
 
-<%= form.hidden_field :user_id, value: current_user.id %>
-<%= form.hidden_field :entity_id, value: current_user.id %>
-
-  <h1>
-    <%= current_user.id %>
-  </h1>  
+<%= form.hidden_field :user_id, value: current_user.id %>  
 
   <div class="actions">
     <%= form.submit 'Create Group' %>

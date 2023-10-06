@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
   create_table "groups", force: :cascade do |t|
     t.integer "author_id"
     t.string "name"
+    t.string "icon"
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

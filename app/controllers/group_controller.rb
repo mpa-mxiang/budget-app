@@ -22,10 +22,15 @@ class GroupController < ApplicationController
         @group = Group.new(category_params)
     
         if @group.save
-          redirect_to group_index_path, notice: 'Category was successfully created.'
+          puts "=============================================="
+          puts "IT WAS SAVED"
+          puts "=============================================="
+          redirect_to root_path, notice: 'Category was successfully created.'
         else
           # render :new
           puts @group.errors.full_messages
+          puts "=============================================="
+          puts "NOT SAVED"
           puts "=============================================="
         end
       end

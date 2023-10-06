@@ -3,6 +3,7 @@ class CreateGroups < ActiveRecord::Migration[7.0]
     create_table :groups do |t|
       t.integer :author_id
       t.string :name
+      t.string :icon
       t.decimal :amount
       t.timestamps
     end
