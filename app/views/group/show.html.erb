@@ -4,6 +4,6 @@
   <p><strong>Name:</strong> <%= @group.name %></p>
   <p><strong>Icon:</strong> <i class="<%= "fas fa-#{@group.icon}" %>"></i></p>
 </div>
-<%= link_to 'New Transaction', new_entity_path(group_id: @group.id ) %>
+<%= link_to 'New Transaction', new_group_entity_path(group_id: @group.id ) %>
 
 <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>

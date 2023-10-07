@@ -14,6 +14,9 @@
 # Configure Using Gemfile
 # gem "pg"
 #
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -23,8 +26,8 @@ default: &default
   username: postgres
   password: kl;'
   host: localhost
-development:
-  <<: *default
+  development:
+<<: *default
   database: budget
 
   # The specified database role being used to connect to postgres.

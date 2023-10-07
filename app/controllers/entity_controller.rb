@@ -6,36 +6,19 @@ class EntityController < ApplicationController
   end
 
   def new
-    @test = params[:entity][:group_id] 
     @entity = Entity.new
     @groups = Group.all
-    @entity.group_id = Group.find(params[:entity][:group_id] )   
-
-    
-
   end
+  
 
   def create
-    
-    
     @entity = Entity.new(entity_params)
-    @entity.group_id = @group_id
-
-    
-    puts "================================="
-    puts @entity.inspect
-    puts "================================="
-
+    @entity.group_id = params[:entity][:group_id]
+  
     if @entity.save
-      puts "================================="
-      puts "----------------------------SAVED"
-      puts "================================="
-      redirect_to entity_path, notice: 'Entity created successfully.'
+      flash[:notice] = 'Entity created successfully.'
+      redirect_to entity_index_path
     else
-      puts @entity.errors.full_messages
-      puts "================================="
-      puts "-----------------------NOT SAVED"
-      puts "================================="
       puts @entity.errors.full_messages
       render :new
     end
