@@ -11,13 +11,16 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "amount"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
@@ -25,11 +28,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
     t.integer "author_id"
     t.string "name"
     t.string "icon"
-    t.decimal "amount"
+    t.decimal "amount", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "entity_id"
+    t.bigint "user_id", null: false
+    t.bigint "entity_id"
     t.index ["entity_id"], name: "index_groups_on_entity_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end

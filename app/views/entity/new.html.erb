@@ -1,5 +1,11 @@
 <h1>New Transaction</h1>
-<%= form_with(model: @entity, url: entity_new_path) do |form| %>
+
+  <%= puts "====================================="%>
+  <%= puts "====================================="%>
+  <%= puts "====================================="%>
+
+<%= form_with(model: @entity, url: entity_index_path ) do |form| %>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -14,4 +20,6 @@
     <%= form.submit 'Create Transaction' %>
     <%= link_to 'Back', entity_index_path %>
   </div>
+
+  
 <% end %>
