@@ -9,12 +9,11 @@ class EntityController < ApplicationController
     @entity = Entity.new
     @groups = Group.all
   end
-  
 
   def create
     @entity = Entity.new(entity_params)
     @entity.group_id = params[:entity][:group_id]
-  
+
     if @entity.save
       flash[:notice] = 'Entity created successfully.'
       redirect_to entity_index_path
@@ -23,6 +22,7 @@ class EntityController < ApplicationController
       render :new
     end
   end
+
   private
 
   def entity_params
