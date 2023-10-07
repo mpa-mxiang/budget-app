@@ -14,9 +14,6 @@
 # Configure Using Gemfile
 # gem "pg"
 #
-
-production:
-  url: <%= ENV['DATABASE_URL'] %>
 default: &default
   adapter: postgresql
   encoding: unicode
