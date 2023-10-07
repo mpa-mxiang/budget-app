@@ -23,9 +23,14 @@ default: &default
   username: postgres
   password: kl;'
   host: localhost
-  development:
-<<: *default
+development:
+  adapter: postgresql
   database: budget
+  username: postgres
+  password: kl;'
+  host: localhost
+  port: 5432
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
