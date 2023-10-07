@@ -1,27 +1,10 @@
-<h1>Categories</h1>
+<div class='position-relative test d-flex flex-column justify-content-between flex-grow-1 h-100 bg-dange' >
 
-<table>
-  <thead>
-    <tr>
-      <th>Icon</th>
-      <th>Name</th>
-    </tr>
-  </thead>
+  <div class='text-center' >
 
-<tbody>
-  <% @groups.each do |g| %>
-    <%= link_to root_path do %>
-      <tr>
-        <td>
-          <i class="<%= "fas fa-#{g.icon}" %>"></i>
-        </td>
-        <td><%= g.name %></td>        
-      </tr>
-    <% end %>
-  <% end %>
-</tbody>
-
-</table>
+    <h3 class='text-center mb-4' >Budget-App</h3>
+    <h6 class='text-center' >Categories</h6>
+  
 
 
 <br>
@@ -42,3 +25,5 @@
 <br>
 
 <%= link_to 'New Category', new_group_path %>
+</div>
+</div>

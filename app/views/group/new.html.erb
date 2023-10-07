@@ -1,14 +1,14 @@
 <%= form_with(model: @group, url: group_index_path) do |form| %>
   
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, style: "display: block", class:"text-center h4"%>
+    <%= form.text_field :name, class: "w-100 border border-0 text-center", style: "border-bottom: 100px solid black;" %>
   </div>
 
   <div class="field">
   <%= form.label :icon %>  
 
-  <select name="group[icon]" class="form-control">
+  <select name="group[icon]" class="form-control d-block text-center h4 p-0 m-0">
     <% @icon_options.each do |option| %>
       <%=option%>
       <%= "============================" %>
