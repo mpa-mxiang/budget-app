@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.string "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "amount"

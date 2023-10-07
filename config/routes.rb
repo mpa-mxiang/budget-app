@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get 'entity/index'
   # get 'entity/new'
   # get 'entity/create'
-  get 'home/index'
+  # get 'home/index'
   root 'group#index'
   # get '/add_entity', to: 'entity#new', as: 'new_entity_page'
 end

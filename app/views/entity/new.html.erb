@@ -6,10 +6,17 @@
 
 <%= form_with(model: @entity, url: entity_index_path ) do |form| %>
 
+  <%= @entity.inspect %>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+
+  <%# <%= form.hidden_field :group, value: params[:group_id] %> %>
+  <%= form.hidden_field :group, value: @groups.find(params[:group_id]).id %>
+
+
 
   <div class="field">
     <%= form.label :amount %>

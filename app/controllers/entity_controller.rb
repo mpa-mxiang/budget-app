@@ -7,6 +7,8 @@ class EntityController < ApplicationController
 
   def new
     @entity = Entity.new
+    @groups = Group.where(user_id: current_user.id)
+
   end
 
   def create
@@ -29,6 +31,6 @@ class EntityController < ApplicationController
   private
 
   def entity_params
-    params.require(:entity).permit(:name, :amount)
+    params.require(:entity).permit(:name, :amount, :group)
   end
 end

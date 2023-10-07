@@ -15,11 +15,10 @@ RSpec.describe "Entities", type: :request do
     end
   end
 
-  describe "GET /create" do
+  describe "POST /create" do
     it "returns http success" do
-      get "/entity/create"
-      expect(response).to have_http_status(:success)
+      post "/entity/create", params: { entity: { name: "Sample Entity", amount: 100 } }
+      expect(response).to have_http_status(302) 
     end
   end
-
 end
