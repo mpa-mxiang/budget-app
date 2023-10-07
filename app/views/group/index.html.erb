@@ -5,20 +5,18 @@
     <tr>
       <th>Icon</th>
       <th>Name</th>
-      <th>Amount</th>
-      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @groups.each do |g| %>
+      <%= link_to, group_path(g), class: 'btn btn-primary'
       <tr>
         <td>
           <i class="<%= "fas fa-#{g.icon}" %>"></i>
         </td>
         <td><%= g.name %></td>
-        <td><%= g.amount %></td>
         <td>
-          <%= link_to 'Show', group_path(g), class: 'btn btn-primary' %>
+        
         </td>
       </tr>
     <% end %>
