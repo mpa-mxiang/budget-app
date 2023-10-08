@@ -2,7 +2,7 @@ class EntityController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @entities = Entity.all
+    @entity = Entity.all
   end
 
   def new

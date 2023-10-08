@@ -16,9 +16,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
 
   create_table "entities", force: :cascade do |t|
     t.string "name"
+    t.string "icon"
+    t.string "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "amount", default: "0.0"
+    t.decimal "amount"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_entities_on_user_id"
   end
@@ -27,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_183723) do
     t.integer "author_id"
     t.string "name"
     t.string "icon"
-    t.decimal "amount"
+    t.decimal "amount", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

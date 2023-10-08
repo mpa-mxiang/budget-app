@@ -38,7 +38,10 @@ class GroupController < ApplicationController
       puts '=============================================='
     end
   end
-
+  def sum
+    @group = Group.find(params[:id])
+    @amount = @group.entities.sum(:amount)
+  end
   private
 
   def category_params
