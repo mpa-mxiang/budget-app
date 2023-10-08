@@ -1,0 +1,19 @@
+<h1>New Transaction</h1>
+<%= form_with(model: @entity, url: entity_index_path) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <%= form.hidden_field :group_id, value: params[:group_id] %>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Transaction' %>
+    <%= link_to 'Back', entity_index_path %>
+  </div>
+<% end %>

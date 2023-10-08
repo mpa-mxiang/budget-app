@@ -1,0 +1,13 @@
+<h1>Transactions</h1>
+
+<% @entity.each do |e| %>
+    
+  <%= link_to groups_entity_path(@group, e) do %>
+    <div class="d-flex gap-4 justify-content-center" >        
+      <div><%= e.name %></div>    
+      <h4> $<%= e.amount%>  </h4>      
+    </div> 
+  <% end %>
+<% end %>
+<br>
+<%= link_to 'Back', root_path %>
