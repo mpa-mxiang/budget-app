@@ -24,6 +24,7 @@ class GroupController < ApplicationController
 
   def create
     @group = Group.new(category_params)
+    @group.author_id = current_user.id
 
     if @group.save
       puts '=============================================='
@@ -45,6 +46,6 @@ class GroupController < ApplicationController
   private
 
   def category_params
-    params.require(:group).permit(:name, :icon, :user_id)
+    params.require(:group).permit(:name, :icon)
   end
 end

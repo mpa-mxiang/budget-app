@@ -2,7 +2,7 @@
 
 <% @entity.each do |e| %>
     
-  <%= link_to entity_path(e) do %>
+  <%= link_to groups_entity_path(@group, e) do %>
     <div class="d-flex gap-4 justify-content-center" >        
       <div><%= e.name %></div>    
       <h4> $<%= e.amount%>  </h4>      

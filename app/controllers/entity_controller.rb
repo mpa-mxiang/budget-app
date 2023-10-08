@@ -11,8 +11,10 @@ class EntityController < ApplicationController
   end
 
   def create
+    @group = Group.find(params[:group_id])
     @entity = Entity.new(entity_params)
-    @entity.group_id = params[:entity][:group_id]
+    
+    @entity.author_id = current_user.id
 
     if @entity.save
       puts '=============================================='
@@ -28,9 +30,14 @@ class EntityController < ApplicationController
     end
   end
 
+  def show
+    @entity = Entity.find(params[:id])
+    render json: @entity
+  end
+
   private
 
   def entity_params
-    params.require(:entity).permit(:name, :amount, :group_id, :other)
+    params.require(:entity).permit(:name, :amount)
   end
 end

@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  resources :group, only: [:new, :create, :show] do 
-    resources :entity
-    member do
-      get 'sum'
-    end
-  end
-  resources :entity, only: [:index]
   devise_for :users
+
+  resources :group do 
+    resources :entity
+  end
+
   root 'group#index'
 end
