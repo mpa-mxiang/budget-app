@@ -9,9 +9,7 @@ class Group < ApplicationRecord
     user: 'fas fa-user',
     envelope: 'fas fa-envelope',
     camera: 'fas fa-camera',
-    shopping_cart: 'fas fa-shopping-cart',
     briefcase: 'fas fa-briefcase',
-    cog: 'fas fa-cog',
-    check_circle: 'fas fa-check-circle'
+    cog: 'fas fa-cog'
   }
 end

@@ -15,11 +15,16 @@ class EntityController < ApplicationController
     @entity.group_id = params[:entity][:group_id]
 
     if @entity.save
-      flash[:notice] = 'Entity created successfully.'
-      redirect_to entity_index_path
+      puts '=============================================='
+      puts 'IT WAS SAVED'
+      puts '=============================================='
+      redirect_to entity_index_path, notice: 'Trasaction was successfully created.'
     else
+      # render :new
       puts @entity.errors.full_messages
-      render :new
+      puts '=============================================='
+      puts 'NOT SAVED'
+      puts '=============================================='
     end
   end
 

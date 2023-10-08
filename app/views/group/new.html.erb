@@ -1,14 +1,14 @@
 <%= form_with(model: @group, url: group_index_path) do |form| %>
   
-  <div class="field">
+  <div class="field m-6 p-6 w-25">
     <%= form.label :name, style: "display: block", class:"text-center h4"%>
-    <%= form.text_field :name, class: "w-100 border border-0 text-center", style: "border-bottom: 100px solid black;" %>
+    <%= form.text_field :name, class: "w-100 border border-1 text-center", style: "border-bottom: 100px solid black;" %>
   </div>
 
-  <div class="field text-center m-3">
+  <div class="field text-center m-3 p-6 w-25">
   <%= form.label :icon %>  
 
-  <select name="group[icon]" class="form-control d-block text-center w-3">
+  <select name="group[icon]" class="form-control d-block text-center">
     <% @icon_options.each do |option| %>
       <%=option%>
       <%= "============================" %>
@@ -19,7 +19,7 @@
 
 <%= form.hidden_field :user_id, value: current_user.id %>  
 
-  <div class="actions text-center d-flex flex-column">
+  <div class="actions text-center d-flex flex-column w-25">
     <%= form.submit 'Create Group' %>
     <%= link_to 'Back', root_path %>
   </div>

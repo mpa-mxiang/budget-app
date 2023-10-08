@@ -9,10 +9,8 @@ class GroupController < ApplicationController
       user
       envelope
       camera
-      shopping-cart
       briefcase
       cog
-      check-circle
     ]
   end
 
